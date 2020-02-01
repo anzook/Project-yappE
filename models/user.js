@@ -34,12 +34,11 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             //====Validations====
-            validate: {
-                isEmail: true, // checks for email format
-                isDecimal: true, // checks for any numbers
-                isLowercase: true, // checks for lowercase
-                isUppercase: true // checks for uppercase
-            }
+            // validate: {
+            //     isDecimal: true, // checks for any numbers
+            //     isLowercase: true, // checks for lowercase
+            //     isUppercase: true // checks for uppercase
+            // }
         },
         rolesID: {}
     });
