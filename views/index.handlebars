@@ -1,38 +1,38 @@
-<h1>Cats!</h1>
+<h1>Lets Get Started</h1>
 
-<h2>Cats that are not sleepy!</h2>
 
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Cats that are sleepy!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Cat</h2>
+<h2>User Info</h2>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="ca">Cat Name:</label>
-    <input type="text" id="ca" name="name">
+    <label for="ca">dog name</label>
+    <input type="text" id="ca" name="userinfo">
   </div>
 
   <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
+    <label for="ca">first name</label>
+    <input type="text" id="ca" name="userinfo">
+  </div> 
 
-  <button type="submit">Add Cat</button>
+    <div class="form-group">
+    <label for="ca">last name</label>
+    <input type="text" id="ca" name="userinfo">
+  </div> 
+
+    <div class="form-group">
+    <label for="ca">email</label>
+    <input type="text" id="ca" name="userinfo">
+  </div> 
+
+    <div class="form-group">
+    <label for="ca">password</label>
+    <input type="text" id="ca" name="userinfo">
+  </div> 
+
+    <div class="form-group">
+    <label for="ca">your address here</label>
+    <input type="text" id="ca" name="username">
+  </div> 
+
+  <button type="submit">Submit Info</button>
 </form>
