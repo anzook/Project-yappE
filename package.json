@@ -1,0 +1,26 @@
+{
+  "name": "project-yappe",
+  "version": "1.0.0",
+  "description": "An app that allows users(owners/caretakes) to connect to each other so that they can monitor the care of a dog by documenting and displaying when one of the users(owners/caretakers) walked, fed and took the dog out to use the bathroom. It also reminds the users of vet and grooming appointments, as well as quick information for the dog's other caretakers or emergency contacts. Ultimately, this app would help track your dog's wellbeing and create a record of care.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anzook/Project-yappE.git"
+  },
+  "author": "Alex, Jody, Mike & Phill M^2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anzook/Project-yappE/issues"
+  },
+  "homepage": "https://github.com/anzook/Project-yappE#readme"
+}
