@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    const Pet = sequelize.define("pet", {
+    const Pet = sequelize.define("Pet", {
         id: {
             type: DataTypes.UUID,
             primaryKey: true,
@@ -8,8 +8,22 @@ module.exports = function (sequelize, DataTypes) {
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            //====Validations====
+            validate: {
+                len: [1, 30]
+            }
         }
     });
+
+    Pet.associate = function (models) {
+        Pet.belongsToMany(models.User, {
+            through: 'User_Pet' // pivot
+        });
+
+        Pet.belongsToMany(models.Role, {
+            through: models.User
+        });
+    };
     return Pet;
 };
