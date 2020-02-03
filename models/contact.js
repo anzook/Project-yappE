@@ -6,12 +6,13 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: DataTypes.UUIDV4,
             allowNull: false
         },
-        user_id: {
-            allowNull: true
-        },
         relationship: {
-            type: DataTypes.ENUM,
-            values: []
+            type: DataTypes.STRING,
+            allowNull: false,
+            //====Validations====
+            validate: {
+                len: [1,30]
+            }
         },
         phone: {
             type: DataTypes.INTEGER,
@@ -22,5 +23,14 @@ module.exports = function (sequelize, DataTypes) {
             }
         }
     });
+
+    Contact.associate = function (models) {
+        Contact.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: true
+            }
+        });
+    };
+
     return Contact;
 };

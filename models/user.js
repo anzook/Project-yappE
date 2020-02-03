@@ -50,6 +50,8 @@ module.exports = function (sequelize, DataTypes) {
         User.belongsToMany(models.Pet, {
             through:'User_Pet' // pivot
         });
+
+        // models.User.hasMany(models.Contact);
     };
 
     return User;

@@ -24,6 +24,8 @@ module.exports = function (sequelize, DataTypes) {
         Pet.belongsToMany(models.Role, {
             through: models.User
         });
+
+
     };
     return Pet;
 };
