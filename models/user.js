@@ -1,12 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
-    const User = sequelize.define("user", {
+    const User = sequelize.define("User", {
         id: {
             type: DataTypes.UUID,
             primaryKey: true,
             defaultValue: DataTypes.UUIDV4,
             allowNull: false
         },
-        firstName: {
+        first_name: {
             type: DataTypes.STRING,
             allowNull: false,
             //====Validations====
@@ -14,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1, 30]
             }
         },
-        lastName: {
+        last_name: {
             type: DataTypes.STRING,
             allowNull: false,
             //====Validations====
@@ -39,8 +39,18 @@ module.exports = function (sequelize, DataTypes) {
             //     isLowercase: true, // checks for lowercase
             //     isUppercase: true // checks for uppercase
             // }
-        },
-        rolesID: {}
+        }
     });
+
+    User.associate = function (models) {
+        User.belongsToMany(models.Role, {
+            through:'User_Role' // pivot
+        });
+
+        User.belongsToMany(models.Pet, {
+            through:'User_Pet' // pivot
+        });
+    };
+
     return User;
 };
