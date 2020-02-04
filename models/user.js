@@ -52,6 +52,8 @@ module.exports = function (sequelize, DataTypes) {
         });
 
         User.hasMany(models.Action);
+
+        User.hasMany(models.AuthToken);
     };
 
     return User;
