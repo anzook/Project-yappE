@@ -30,6 +30,8 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: true
             }
         });
+
+        // Contact.hasOne(models.Pet);
     };
 
     return Contact;

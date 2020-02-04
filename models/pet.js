@@ -25,7 +25,9 @@ module.exports = function (sequelize, DataTypes) {
             through: models.User
         });
 
-        Pet.hasMany(models.Action);
+        // Pet.belongsToMany(models.Contact, {
+        //     through: models.User
+        // });
 
     };
     return Pet;
