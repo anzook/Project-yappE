@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    const Action_Types = sequelize.define("Action_Types", {
+    const Action_Type = sequelize.define("Action_Types", {
         id: {
             type: DataTypes.UUID,
             primaryKey: true,
@@ -16,5 +16,9 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    return Action_Types;
+    Action_Type.associate = function (models) {
+        Action_Type.hasMany(models.Action)
+    };
+
+    return Action_Type;
 }
