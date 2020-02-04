@@ -51,7 +51,7 @@ module.exports = function (sequelize, DataTypes) {
             through:'User_Pet' // pivot
         });
 
-        // models.User.hasMany(models.Contact);
+        User.hasMany(models.Action);
     };
 
     return User;
