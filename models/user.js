@@ -52,9 +52,6 @@ module.exports = function (sequelize, DataTypes) {
         });
 
         User.hasMany(models.Action);
-
-        // establish connection with AuthToken
-        User.hasMany(models.AuthToken); 
     };
 
     return User;
