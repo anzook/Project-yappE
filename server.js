@@ -1,7 +1,7 @@
 // *****************************************************************************
 // This file is the initial starting point for the Node/Express server.
 //
-require('dotenv').config();
+// require('dotenv').config();
 const passport = require("./config/passport");
 
 // *****************************************************************************

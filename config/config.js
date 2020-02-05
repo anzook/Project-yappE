@@ -2,7 +2,7 @@
 const config = {
   'development': {
     'username': 'root',
-    'password': process.env.MYSQL_ROOT_PASS,
+    'password': "root123", //process.env.MYSQL_ROOT_PASS, 
     'database': 'dog_db',
     'host': '127.0.0.1',
     'dialect': 'mysql',
