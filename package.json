@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "mysql": "^2.18.1",
@@ -13,9 +14,14 @@
     "passport-local": "^1.0.0",
     "sequelize": "^5.21.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "lint": "eslint **/*.js --quiet",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
