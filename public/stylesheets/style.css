@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+ 
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+ 
+body {
+    background-image: url("../images/dogbg3.jpg");
+    height: 100vh;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+.container{
+    width: 350px;
+    margin: 120px auto 0;
+    position: absolute;
+    right: 15%;
+}
+
+.signup,
+.login{
+    width: 50%;
+    background: grey;
+    height: 55px;
+    float: left;
+    text-align: center;
+    line-height: 55px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+.signup-form,
+.login-form{
+    background: gray;
+    box-sizing: border-box;
+    padding: 25px;
+} 
+
+.input{
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+}
+
+.button{
+    text-transform: uppercase;
+    width: 100%;
+    font-weight: 600;
+}
