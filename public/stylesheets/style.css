@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
  
 * {
@@ -14,6 +15,17 @@ body {
     overflow: hidden;
 }
 
+.landing-nav{
+    background: none;
+}
+
+.landing-nav h1{
+    font-family: 'Marck Script', cursive;
+    font-size: 85px;
+    color: whitesmoke;
+    margin-left: 40px;
+    text-shadow: 2px 2px 8px rgb(33, 61, 38);
+}
 .container{
     width: 350px;
     position: absolute;
