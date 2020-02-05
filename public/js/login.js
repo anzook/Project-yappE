@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 $(document).ready(function() {
   // Getting references to our form and inputs
-  const loginForm = $('form.login');
+  const loginForm = $('form.login-form');
   const emailInput = $('input#email-input');
   const passwordInput = $('input#password-input');
 
@@ -41,9 +41,9 @@ $(document).ready(function() {
     })
         .then(function() {
           window.location.replace('/members');
-          // If there's an error, log the error
         })
         .catch(function(err) {
+          // If there's an error, log the error
           console.log(err);
         });
   }

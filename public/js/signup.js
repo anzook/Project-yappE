@@ -19,9 +19,8 @@ $(document).ready(function() {
   });
 
   // Getting references to our form and input
-  const signUpForm = $('form.signup');
-  const firstNameInput = $('input#firstname-input');
-  const lastNameInput = $('input#lastname-input');
+  const signUpForm = $('form.signup-form');
+  const nameInput = $('input#name-input');
   const emailInput = $('input#email-input');
   const passwordInput = $('input#password-input');
 
@@ -30,21 +29,17 @@ $(document).ready(function() {
   signUpForm.on('submit', function(event) {
     event.preventDefault();
     const userData = {
-      firstName: firstNameInput.val().trim(),
-      lastName: lastNameInput.val().trim(),
+      name: nameInput.val().trim(),
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
     };
 
-    if (!userData.firstName || !userData.lastName ||
-      !userData.email || !userData.password) {
+    if (!userData.name || !userData.email || !userData.password) {
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password,
-        userData.firstName, userData.lastName);
-    firstNameInput.val('');
-    lastNameInput.val('');
+    signUpUser(userData.email, userData.password, userData.name);
+    nameInput.val('');
     emailInput.val('');
     passwordInput.val('');
   });
@@ -56,8 +51,7 @@ $(document).ready(function() {
     $.post('/api/signup', {
       email: email,
       password: password,
-      firstName: first,
-      lastName: last,
+      name: name,
     })
         .then(function(data) {
           window.location.replace('/homepage');
