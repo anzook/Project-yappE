@@ -15,8 +15,7 @@ body {
 }
 
 .container{
-    width: 350px;
-    margin: auto;
+    max-width: 350px;
     position: absolute;
     right: 15%;
     top: 20%;
