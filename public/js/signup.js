@@ -1,5 +1,23 @@
 /* eslint-disable require-jsdoc */
 $(document).ready(function() {
+  // Setting up automation for signup and login forms
+  $('.login-form').hide();
+  $('.login').css('background', 'none');
+
+  $('.login').click(function() {
+    $('.signup-form').hide();
+    $('.login-form').show();
+    $('.signup').css('background', 'none');
+    $('.login').css('background', 'rgba(85,171,189, 0.7)');
+  });
+
+  $('.signup').click(function() {
+    $('.signup-form').show();
+    $('.login-form').hide();
+    $('.signup').css('background', 'rgba(85,171,189, 0.7)');
+    $('.login').css('background', 'none');
+  });
+
   // Getting references to our form and input
   const signUpForm = $('form.signup');
   const firstNameInput = $('input#firstname-input');
@@ -7,7 +25,8 @@ $(document).ready(function() {
   const emailInput = $('input#email-input');
   const passwordInput = $('input#password-input');
 
-  // When the signup button is clicked, we validate the email and password are not blank
+  // When the signup button is clicked, we validate the email and
+  // password are not blank
   signUpForm.on('submit', function(event) {
     event.preventDefault();
     const userData = {
@@ -17,18 +36,21 @@ $(document).ready(function() {
       password: passwordInput.val().trim(),
     };
 
-    if (!userData.firstName || !userData.lastName || !userData.email || !userData.password) {
+    if (!userData.firstName || !userData.lastName ||
+      !userData.email || !userData.password) {
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password, userData.firstName, userData.lastName);
+    signUpUser(userData.email, userData.password,
+        userData.firstName, userData.lastName);
     firstNameInput.val('');
     lastNameInput.val('');
     emailInput.val('');
     passwordInput.val('');
   });
 
-  // Does a post to the signup route. If successful, we are redirected to the members page
+  // Does a post to the signup route. If successful
+  // we are redirected to the members page
   // Otherwise we log any errors
   function signUpUser(email, password, first, last) {
     $.post('/api/signup', {
@@ -44,7 +66,7 @@ $(document).ready(function() {
         // .catch(handleLoginErr);
         .catch((err)=>{
           console.log(err);
-        });// handleLoginErr with alert/visual for UI, in responseJSON;
+        });
   }
 
 //   function handleLoginErr(err) {
