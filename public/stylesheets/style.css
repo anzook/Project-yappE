@@ -16,19 +16,32 @@ body {
 
 .container{
     width: 350px;
-    margin: 120px auto 0;
+    margin: auto;
     position: absolute;
     right: 15%;
+    top: 20%;
+    border-radius: 10px;
+    background-color: rgba(14,174,19, 0.2);
+    box-shadow: 5px 10px 18px 10px #232c23;
+}
+.signup{
+    border-radius: 10px 0 0 0;
 }
 
+.login{
+    border-radius: 0 10px 0 0;
+}
 .signup,
 .login{
     width: 50%;
-    background: grey;
+    background-color: rgba(85,171,189, 0.7);
     height: 55px;
     float: left;
     text-align: center;
     line-height: 55px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 4px whitesmoke;
     cursor: pointer;
     text-transform: uppercase;
     color: whitesmoke;
@@ -36,9 +49,11 @@ body {
 
 .signup-form,
 .login-form{
-    background: gray;
+    border-radius: 0 0 10px 10px;
+    background-color: rgba(85,171,189, 0.7);
     box-sizing: border-box;
     padding: 25px;
+    clear: both;
 } 
 
 .input{
@@ -47,7 +62,8 @@ body {
     transition: all 0.5s ease;
 }
 
-.button{
+.signup-form .button,
+.login-form .button{
     text-transform: uppercase;
     width: 100%;
     font-weight: 600;
