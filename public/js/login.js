@@ -40,7 +40,7 @@ $(document).ready(function() {
       password: password,
     })
         .then(function() {
-          window.location.replace('/members');
+          window.location.replace('/homepage');
         })
         .catch(function(err) {
           // If there's an error, log the error
