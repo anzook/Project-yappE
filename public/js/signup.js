@@ -54,7 +54,7 @@ $(document).ready(function() {
       password: password,
     })
         .then(function(data) {
-          window.location.replace('/homepage');
+          window.location.replace('/initial-adds');
           // If there's an error, handle it by throwing up a bootstrap alert
         })
         // .catch(handleLoginErr);
