@@ -24,8 +24,9 @@ body {
     font-size: 85px;
     color: whitesmoke;
     margin-left: 40px;
-    text-shadow: 2px 2px 8px rgb(33, 61, 38);
+    text-shadow: 1px 7px 4px rgb(2, 10, 2);
 }
+
 .container{
     width: 350px;
     position: absolute;
