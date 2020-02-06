@@ -1,64 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>yappE</title>
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
-
 <body>
-    <h1>HOT DOG!!</h1>
-    <form action="action_page.php" method="post"></form>
+    <nav class="navbar doggadd-nav" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/homepage">
+                <h1>yappE</h1>
+            </a>
+        </div>
+    </nav>
+
     <div class="container">
-        <ul>
-            <label class="mdc-text-field">
-                <input type="text" class="mdc-text-field__input" required>
-                <span class="mdc-floating-label">Dog Name</span>
-                <div class="mdc-text-field__bottom-line"></div>
-            </label>
-        </ul>
+        <div class="dogg-add">
+        <form class="dogadd-form">
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="text" name="pet-name" id="name-input" placeholder="Pet Name">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-dog"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="dropdown is-active">
+                <div class="dropdown-trigger">
+                  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>Age</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                  <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                      One
+                    </a>
+                    <a class="dropdown-item">
+                      Two
+                    </a>
+                    <a href="#" class="dropdown-item">
+                      Three
+                    </a>
+                    <a href="#" class="dropdown-item">
+                      Four
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Five
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        Six
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        Seven
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        Eight
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        Nine
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        Ten
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        Eleven
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        Twelve
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        Four
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        Thirteen
+                      </a>                    
+                  </div>
+                </div>
+              </div>
+              <label class="checkbox">
+                <input type="checkbox">
+                Male
+              </label>
+              <label class="checkbox">
+                <input type="checkbox">
+                Female
+              </label>
+              <input class="input" type="text" placeholder="Breed">
+            
+            
+            <button type="submit" class="button is-primary is-inverted is-outlined">Next</button>
 
 
-        <ul>
-            <label class="mdc-text-field">
-                <input type="text" class="mdc-text-field__input" required>
-                <span class="mdc-floating-label">Dog Age</span>
-                <div class="mdc-text-field__bottom-line"></div>
-            </label>
-        </ul>
-
-        <ul>
-            <label class="mdc-text-field">
-                <input type="text" class="mdc-text-field__input" required>
-                <span class="mdc-floating-label">Male or Female?</span>
-                <div class="mdc-text-field__bottom-line"></div>
-            </label>
-        </ul>
-
-        <ul>
-            <label class="mdc-text-field">
-                <input type="text" class="mdc-text-field__input" required>
-                <span class="mdc-floating-label">Breed</span>
-                <div class="mdc-text-field__bottom-line"></div>
-            </label>
-        </ul>
-
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript" src="js/signup.js"></script>
+            <script type="text/javascript" src="js/login.js"></script>
+        </form>
+    </div>
     </div>
 
-    <span class="newdog"><a href="dogtables.html">Lets Go!</a></span>
-    </form>
-
-
-
-
-
-
-
-
+    
 </body>
-
 </html>
