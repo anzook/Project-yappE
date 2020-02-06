@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
  
-body {
+.landing-body {
     background-image: url("../images/dogbg3.jpg");
     height: 100vh;
     background-size: cover;
@@ -28,7 +28,7 @@ body {
     text-shadow: 1px 7px 4px rgb(2, 10, 2);
 }
 
-.container{
+.landing-container{
     width: 350px;
     position: absolute;
     right: 15%;
@@ -84,14 +84,14 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
-    .container{
+    .landing-container{
         right: 8%;
     }
 }
 
 
 @media only screen and (max-width: 768px) {
-    .container{
+    .landing-container{
         position: inherit;
         margin-top: 135px;
         /* margin-right: auto; */
@@ -99,7 +99,7 @@ body {
 }
 
 @media only screen and (max-width: 425px) {
-    .container{
+    .landing-container{
         max-width: 280px;
         /* position: in; */
         /* top: 20%; */
