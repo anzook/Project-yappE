@@ -19,16 +19,31 @@
             </a>
         </div>
     </nav>
-
     <div class="container profile-container">
+
+        <!-- main profile pic of the dog needs to go here -->
+        <div class="box">
+            <article class="media">
+                <div class="media-" id="imagediv">
+                    <img class="dog-pic" src=../images/dogbg0.jpg alt="placeholder">
+                </div>
+        </div>
+        <div class="buttons">
+            <button class="button is-success">Feed Dog</button>
+            <!--button needs to track what time it was pressed and track the user who pushed the button-->
+            <p>Fed by</p>
+            <div class="field">
+                <div class="control">
+                    <input class="input is-success" type="text" placeholder="which user?"> <br>
+                </div>
+            </div>
+        </div>
         <input class="button is-success potty_button" type="submit" value="Took Potty">
         <div class="field">
             <textarea class="potty-info" placeholder="Potty Info"></textarea>
 
             <input class="button is-success walked_button" type="submit" value="Took for Walk">
-            <textarea class="walk-info" placeholder="Walk Info"></textarea>
-                       
-            </div>
+            <textarea class="walk-info" placeholder="Walk Info"></textarea>        
     </div>
     
 </body>
