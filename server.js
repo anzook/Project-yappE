@@ -33,6 +33,7 @@ app.use(passport.session());
 // =============================================================
 require("./routes/html-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
+require("./routes/dog-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
