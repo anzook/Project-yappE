@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+/* ===style for all pages=== */
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+ 
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.input{
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* ============End============ */
+
+/* ===========index=========== */
+.landing-body {
+    background-image: url("../images/dogbg3.jpg");
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.landing-nav, .dogadd-nav{
+    background: none;
+}
+
+
+.landing-nav h1{
+    font-family: 'Marck Script', cursive;
+    font-size: 85px;
+    color: whitesmoke;
+    margin-left: 40px;
+    text-shadow: 1px 7px 4px rgb(2, 10, 2);
+}
+
+.landing-container{
+    width: 350px;
+    position: absolute;
+    right: 15%;
+    top: 20%;
+    border-radius: 10px;
+    background-color: rgba(14,174,19, 0.2);
+    box-shadow: 5px 10px 18px 10px #232c23;
+}
+.signup{
+    border-radius: 10px 0 0 0;
+}
+
+.login{
+    border-radius: 0 10px 0 0;
+}
+.signup,
+.login, .dogg-add{
+    width: 50%;
+    background-color: rgba(85,171,189, 0.7);
+    height: 55px;
+    float: left;
+    text-align: center;
+    line-height: 55px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 4px whitesmoke;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+.signup-form,
+.login-form{
+    border-radius: 0 0 10px 10px;
+    background-color: rgba(85,171,189, 0.7);
+    box-sizing: border-box;
+    padding: 25px;
+    clear: both;
+} 
+
+.dogadd-form .button,
+.signup-form .button,
+.login-form .button{
+    text-transform: uppercase;
+    width: 100%;
+    font-weight: 600;
+}
+/* ============End============ */
+
+
+/* ========initial-adds======= */
+
+.notclickable{
+    cursor: default;
+}
+
+.initial-add-body{
+    background-image: url('../images/dogbg4.jpg');
+    height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color: white;
+}
+
+#welcome{
+    margin-left: 10%;
+}
+
+.initial-add-container{
+    position: absolute;
+    right: 0px;
+    width: 350px;
+    margin-right: 6%;
+}
+
+.tab {
+    display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+    opacity: 1;
+}
+  
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #4CAF50;
+}
+
+.initial-add-container h2{
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.initial-add-container .field{
+    margin-bottom: 10px;
+}
+
+.dog-sex-container{
+text-align: center;
+}
+
+.dog-sex-container label{
+    position: relative;
+    cursor: pointer;
+}
+
+.dog-sex-container label input{
+    display: none;
+}
+
+.dog-sex-container label span{
+    position: relative;
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 5px;
+    width: 30%;
+    border: 2px solid rgb(100, 104, 110);
+    border-radius: 4px;
+    color: rgb(100, 104, 110);
+    /* background: black; */
+    /* z-index: 1; */
+}
+
+.dog-sex-container label input:checked ~ span{
+    color: white;
+    border: 2px solid #48c774;
+    background: rgb(14, 13, 13);
+    box-shadow: inset 0 0 10px #48c774;
+}
+
+/* .dog-sex-container label input:checked ~ span:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #6cbdec;
+    z-index: -1;
+    filter: blur(10px);
+} */
+
+.breed-div{
+    width: 100%;
+}
+
+.role-div{
+    width: 100%;
+}
+
+select{
+    width: inherit;
+}
+
+.add-caretaker-tab .label{
+    color: white;
+}
+
+/* ============End============ */
+
+
+/* ========Viewpoints========= */
+@media only screen and (max-width: 1024px) {
+    .landing-container{
+        right: 8%;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .landing-container{
+        position: inherit;
+        margin-top: 135px;
+        /* margin-right: auto; */
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .landing-container{
+        max-width: 280px;
+        /* position: in; */
+        /* top: 20%; */
+        /* margin-left: auto; */
+        /* margin-right: auto; */
+    }
+}
+
+/* ============End============ */

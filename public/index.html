@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>yappE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body class="landing-body">
+    <nav class="navbar landing-nav" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/homepage">
+                <h1>yappE</h1>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container landing-container">
+        <div class="signup">Sign Up</div>
+        <div class="login">Login</div>
+
+        <form class="signup-form">
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="text" name="name" id="name-input" placeholder="Name">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="email" id="email-input" placeholder="Email">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="password" id="password-input" placeholder="Password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+            </div>
+            <button type="submit" class="button is-primary is-inverted is-outlined">sign up</button>
+        </form>
+
+        <form class="login-form">
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="email" id="email-input" placeholder="Email">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="password" id="password-input" placeholder="Password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+            </div>
+            <button type="submit" class="button is-primary is-inverted is-outlined">login</button>
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript" src="js/signup.js"></script>
+            <script type="text/javascript" src="js/login.js"></script>
+        </form>
+    </div>
+
+</body>
+
+</html>
