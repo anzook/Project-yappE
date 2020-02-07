@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 30],
       },
     },
-    age: {
+    sex: {
       type: DataTypes.INTEGER,
       allowNull: false,
       // ====Validations====
@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 30],
       },
     },
-    sex: {
+    age: {
       type: DataTypes.STRING,
       allowNull: false,
       // ====Validations====
