@@ -27,12 +27,12 @@ body{
     overflow: hidden;
 }
 
-.landing-nav, .dogadd-nav{
+.landing-nav, .dogadd-nav, .dogprofile-nav {
     background: none;
 }
 
 
-.landing-nav h1{
+.landing-nav h1, .dogprofile-nav {
     font-family: 'Marck Script', cursive;
     font-size: 85px;
     color: whitesmoke;
@@ -49,6 +49,17 @@ body{
     background-color: rgba(14,174,19, 0.2);
     box-shadow: 5px 10px 18px 10px #232c23;
 }
+
+.profile-container {
+    height:300px;
+    width: 350px;
+    position: absolute;
+    right: 15%;
+    top: 20%;
+    border-radius: 10px;
+    background-color: rgba(14,174,19, 0.2);
+    box-shadow: 5px 10px 18px 10px #232c23;
+}
 .signup{
     border-radius: 10px 0 0 0;
 }
@@ -57,7 +68,7 @@ body{
     border-radius: 0 10px 0 0;
 }
 .signup,
-.login, .dogg-add{
+.login, .dogg-add {
     width: 50%;
     background-color: rgba(85,171,189, 0.7);
     height: 55px;
@@ -81,6 +92,8 @@ body{
     clear: both;
 } 
 
+.walked_button,
+.potty_button,
 .dogadd-form .button,
 .signup-form .button,
 .login-form .button{
