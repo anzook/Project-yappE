@@ -23,33 +23,45 @@
 
         <!-- main profile pic of the dog needs to go here -->
         <div class="box">
-            <article class="media">
-                <div class="media-" id="imagediv">
-                    <img class="dog-pic" src=../images/dogbg0.jpg alt="placeholder">
-                </div>
+            <div class="media-" id="imagediv">
+                <img class="dog-pic" src=../images/dogbg0.jpg alt="placeholder">
+            </div>
         </div>
         <div class="buttons">
-            <button class="button is-outlined feed-button">Feed Dog</button>
+            <button class="button is-primary is-inverted is-outlined feed-button">Feed Dog</button>
             <!--button needs to track what time it was pressed and track the user who pushed the button-->
             <p>Fed by</p>
             <div class="field">
                 <div class="control">
-                    <input class="input is-outlined" type="text" placeholder="which user?"> <br>
+                    <textarea class="feed-info" placeholder="Feed Info"></textarea> <br>
                 </div>
             </div>
         </div>
-        <input class="button is-outlined potty_button" type="submit" value="Took Potty">
-        <div class="field">
-            <textarea class="potty-info" placeholder="Potty Info"></textarea>
+        <div class="buttons">
+            <button class="button is-primary is-inverted is-outlined potty-button">Take Dog to Potty</button>
+            <!--button needs to track what time it was pressed and track the user who pushed the button-->
+            <p>Let out by</p>
+            <div class="field">
+                <div class="control">
+                    <textarea class="potty-info" placeholder="Potty Info"></textarea> <br>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="button is-primary is-inverted is-outlined walk-button">Walk Dog</button>
+            <!--button needs to track what time it was pressed and track the user who pushed the button-->
+            <p>Walked by</p>
+            <div class="field">
+                <div class="control">
+                    <textarea class="walk-info" placeholder="Walk Info"></textarea> <br>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/signup.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
 
-            <input class="button is-outlined walked_button" type="submit" value="Took for Walk">
-            <textarea class="walk-info" placeholder="Walk Info"></textarea>        
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script type="text/javascript" src="js/signup.js"></script>
-            <script type="text/javascript" src="js/login.js"></script>
-    
 </body>
 
 </html>
