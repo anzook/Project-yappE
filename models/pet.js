@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       },
     },
     sex: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       // ====Validations====
       validate: {
@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
       },
     },
     age: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       // ====Validations====
       validate: {
@@ -45,7 +45,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Pet.belongsToMany(models.Role, {
-    through: 'Role_Pet',
+      through: 'Role_Pet',
       allowNull: false,
       onDelete: 'CASCADE',
     });

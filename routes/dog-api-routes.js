@@ -1,11 +1,6 @@
 /* eslint-disable linebreak-style */
 // Requiring our models and passport as we've configured it
 const db = require('../models');
-<<<<<<< HEAD
-=======
-// const passport = require('../config/passport');
-//const User = Product.hasMany(Pet, { as: 'user' });
->>>>>>> cabf26c7ec1a40a9e709522f9bdf724a198603b7
 
 module.exports = function(app) {
   app.get('/api/pets/:id', function(req, res) {

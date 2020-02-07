@@ -4,28 +4,23 @@ $(document).ready(function() {
 //   const initialAddForm = $('form.initial-adds-form');
   const nameInput = $('#dog-name');
   const ageInput = $('#dog-age');
-  const sexInput = $('#dog-sex');
   const breedInput = $('#dog-breed');
-  const submitbtn = $('#nextBtn');
+  const initSubmitbtn = $('#nextBtn');
 
-  submitbtn.click(function(event) {
+  initSubmitbtn.click(function(event) {
     event.preventDefault();
-    if (submitbtn.html() == 'Submit') {
+    if (initSubmitbtn.html() == 'Submit') {
       console.log('I was touched');
       const dogData = {
         name: nameInput.val().trim(),
         age: ageInput.val().trim(),
-        sex: sexInput.val().trim(),
+        sex: $('input[name="dog-sex"]:checked').val(),
         breed: breedInput.val().trim(),
       };
       if (!dogData.name || !dogData.age || !dogData.sex || !dogData.breed) {
         return;
       }
       addDog(dogData.name, dogData.age, dogData.sex, dogData.breed);
-      nameInput.val('');
-      ageInput.val('');
-      sexInput.val('');
-      breed.val('');
     } else {
       nextPrev(1);
     }
