@@ -11,7 +11,7 @@ module.exports = function(app) {
     },
     {
       include: [{
-        model: User,
+        model: db.User,
       }],
     }).then(function(dbDog) {
       res.json(dbDog);
@@ -28,9 +28,11 @@ module.exports = function(app) {
           breed: req.body.breed,
         },
       });
-      const currentUser = await db.User.findByPk(req.body.userId);
-      await currentUser.addPet(PetAdd);
+
+      // const currentUser = await db.User.findByPk(req.body.userId);
+      // await currentUser.addPet(PetAdd);
       res.json(PetAdd);
+
     } catch (err) {
       // res.status(401).json(err);
       next(err);

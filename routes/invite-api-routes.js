@@ -3,10 +3,10 @@
 const db = require('../models');
 
 module.exports = function(app) {
-  app.get('/api/invites/:id', function(req, res) {
+  app.get('/api/invites/:petid', function(req, res) {
     db.Invite.findOne({
       where: {
-        id: req.params.id,
+        PetId: req.params.petid,
       },
     }).then(function(dbDog) {
       res.json(dbDog);
@@ -18,9 +18,6 @@ module.exports = function(app) {
       name: req.body.name,
       email: req.body.email,
       PetId: req.body.petId,
-    }, {
-      include: db.Pet,
-
     }).then(function(dbDog) {
       res.json(dbDog);
     })

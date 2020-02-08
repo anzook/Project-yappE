@@ -40,8 +40,8 @@ module.exports = function(sequelize, DataTypes) {
   Pet.associate = function(models) {
     Pet.belongsToMany(models.User, {
       through: 'UserPet',
-      foreignKey: 'petId',
-      otherKey: 'userID',
+    //   foreignKey: 'petId',
+    //   otherKey: 'userID',
     });
     //   onDelete: 'CASCADE',
   };

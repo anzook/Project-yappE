@@ -3,16 +3,30 @@
 const db = require('../models');
 
 module.exports = function(app) {
-  app.get('/api/actions/:id', function(req, res) {
+  app.get('/api/actions', function(req, res) {
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Post
+    db.Action.findAll({
+      include: [{
+        model: db.User,
+        model: db.Pet,
+      }],
+    }).then(function(dbDog) {
+      res.json(dbDog);
+    });
+  });
+
+  app.get('/api/actions/:petid', function(req, res) {
     db.Action.findOne({
       where: {
-        id: req.params.id,
+        petId: req.params.petid,
       },
     },
     {
       include: [{
-        model: User,
-        model: Pet,
+        model: db.User,
+        model: db.Pet,
       }],
     }).then(function(dbDog) {
       res.json(dbDog);
@@ -24,9 +38,8 @@ module.exports = function(app) {
       note: req.body.note,
       type: req.body.actionTypeId,
       UserId: req.body.userId,
-    }, {
-      include: db.User,
-      include: db.Action_Type,
+      PetId: req.body.petId,
+
     }).then(function(dbDog) {
       res.json(dbDog);
     })

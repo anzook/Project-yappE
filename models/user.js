@@ -49,8 +49,8 @@ module.exports = function(sequelize, DataTypes) {
   User.associate = function(models) {
     User.belongsToMany(models.Pet, {
       through: 'UserPet',
-      foreignKey: 'userId',
-      otherKey: 'petID',
+      // foreignKey: 'userId',
+      // otherKey: 'petID',
     });
     //   onDelete: 'CASCADE',
     User.hasMany(models.Action);

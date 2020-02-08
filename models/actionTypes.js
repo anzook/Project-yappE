@@ -7,13 +7,16 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     },
     name: {
-      type: DataTypes.ENUM,
-      values: ['poop', 'pee', 'high-five', 'sit', 'speak', 'roll-over', 'walked', 'fetch'],
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     type: {
       type: DataTypes.ENUM,
       values: ['potty', 'exercise', 'tricks'],
     },
+}, {
+        timestamps: false,
+    
   });
 
   Action_Type.associate = function(models) {
