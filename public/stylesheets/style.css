@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Signika+Negative:400,600&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sriracha&display=swap');
 
 /* ===style for all pages=== */
 * {
@@ -110,7 +111,27 @@ body{
 }
 
 #welcome{
+    font-family: 'Sriracha', cursive;
     margin-left: 10%;
+    font-size: 20px;
+    width: 480px;
+    position: absolute;
+    bottom: 0;
+    font-size: 40px;
+    margin: 100px;
+    margin-left: 50px;
+    text-shadow: 1px 5px 2px rgb(2, 10, 2);
+}
+
+#welcome h1 span{
+    margin-left: 3px;
+    font-size: 55px;
+}
+
+.svg-inline--fa.fa-w-16 {
+    font-size: 18px;
+    margin-left: 5px;
+    text-shadow: 1px 5px 2px rgb(2, 10, 2);
 }
 
 .initial-add-container{
@@ -405,6 +426,30 @@ select{
         /* margin-left: auto; */
         /* margin-right: auto; */
     }
-}
 
+    .initial-add-body{
+        height: 100vh;
+    }
+
+    .initial-add-body #welcome{
+        display: none;
+    }
+
+    .initial-add-body .initial-add-container{
+        margin-top: 70px;
+    }
+
+    .choice-div label span{
+        position: relative;
+        display: inline-block;
+        margin: 10px 10px;
+        padding: 20px;
+        width: 45%;
+        border: none;
+        border-radius: 4px;
+        background-color: rgb(78, 78, 78);
+        opacity: 0.95;
+        color: white;
+    }
+}
 /* ============End============ */
