@@ -2,15 +2,17 @@
 $(document).ready(function() {
   // Getting references to our form and inputs
   const loginForm = $('form.login-form');
-  const emailInput = $('input#email-input');
-  const passwordInput = $('input#password-input');
+  const signupemailInput = $('input#su-email-input');
+  const loginemailInput = $('input#li-email-input');
+  const signuppasswordInput = $('input#su-password-input');
+  const loginpasswordInput = $('input#li-password-input');
 
   // When the form is submitted, validate an email and password entered
   loginForm.on('submit', function(event) {
     event.preventDefault();
     const userData = {
-      email: emailInput.val().trim(),
-      password: passwordInput.val().trim(),
+      email: signupemailInput.val().trim(),
+      password: signuppasswordInput.val().trim(),
     };
     if (!userData.email || !userData.password) {
       return;
@@ -18,8 +20,8 @@ $(document).ready(function() {
 
     // with an email and password, run the loginUser function and clear the form
     loginUser(userData.email, userData.password);
-    emailInput.val('');
-    passwordInput.val('');
+    loginemailInput.val('');
+    loginpasswordInput.val('');
   });
 
   // loginUser does a post to our "api/login" route

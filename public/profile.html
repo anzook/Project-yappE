@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yappE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body class="profile-body">
+  <nav class="navbar landing-nav profile-nav" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" id="profile-yappe" href="/homepage">
+        <h1 id="profile-yappe">yappE</h1>
+      </a>
+    </div>
+
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary add-dog-btn" id="add-dog-btn">
+            <i class="fas fa-paw fa-2x"></i>
+            <i class="fas fa-plus fa-lg"></i>
+          </a>
+          <div class="modal" id="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <h2>Add Dog:</h2>
+                <div class="field">
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" id="dog-name" placeholder="Name: Snowflake">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-paw"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" id="dog-age" placeholder="Age: 4">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-paw"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="dog-sex-container">
+                    <label>
+                        <input type="radio" name="dog-sex" id="ml-dog-sex" value="male">
+                        <span id="male-dog">Male</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="dog-sex" id="fem-dog-sex" value="female">
+                        <span id="female-dog">Female</span>
+                    </label>
+                </div>
+
+                <div class="select breed-div">
+                    <select id="dog-breed">
+                        <option>Breed...</option>
+                        <option>Labrador Retriever</option>
+                        <option>German Shepherd</option>
+                        <option>Shih Tzu</option>
+                        <option>Golden Retriever</option>
+                        <option>Bulldog</option>
+                        <option>Beagle</option>
+                        <option>American Pitbull Terrier</option>
+                        <option>Poodle</option>
+                    </select>
+                </div>
+                <div>
+                  <button class="button is-success" type="button" id="submit-dog">Submit</button>
+                </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <div class="profile-card">
+      <!-- Dog Card -->
+      <div class="img-div">
+        <img src="images/dogpro.jpg" alt="">
+      </div>
+      <div class="main-content">
+        <h2>Thor</h2>
+        <div class="routine-div">
+          <div id="potty-div">
+            <h4>Last Potty: 1 hour ago</h4>
+            <h4>By: Renée</h4>
+            <!-- <textarea class="textarea" placeholder="Normal textarea"></textarea> -->
+            <div><button class="button is-primary">Thor Pottied</button></div>
+          </div>
+
+          <div id="feed-div">
+            <h4>Last Feed: 4 hours ago</h4>
+            <h4>By: Jay</h4>
+            <!-- <textarea class="textarea" placeholder="Normal textarea"></textarea> -->
+            <div><button class="button is-primary">Thor Ate</button></div>
+          </div>
+
+          <div id="walked-div">
+            <h4>last walked: 2 days ago</h4>
+            <h4>By: Jay</h4>
+            <!-- <textarea class="textarea" placeholder="Normal textarea"></textarea> -->
+            <div><button class="button is-primary">Thor Was Walked</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/profile.js"></script>
+</body>
+
+</html>
