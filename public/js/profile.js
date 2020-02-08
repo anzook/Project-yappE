@@ -62,8 +62,8 @@ $(document).ready(function() {
   }
 
   function getDog(user) {
-    $.get("/api/user/" + user, function(data) {
-      console.log("Dog", + data);
+    $.get('/api/user/' + user, function(data) {
+      console.log("Dog" + data);
       dog = data;
       // if (!posts || !posts.length) {
       //   displayEmpty(author);
