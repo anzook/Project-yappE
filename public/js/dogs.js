@@ -11,6 +11,11 @@ $(document).ready(function() {
   const newDogDiv = $('#new-dog');
   const dogID = $('#dog-id');
 
+  // grab user id from localstorage
+  const userid = localStorage.getItem('userId');
+
+  console.log(userid);
+
   initSubmitbtn.click(function(event) {
     event.preventDefault();
     if (initSubmitbtn.html() === 'Submit') {
@@ -58,11 +63,27 @@ $(document).ready(function() {
       sex: sex,
       breed: breed,
     }) .then(function(data) {
-      window.location.replace('/homepage');
+      const dogIDinit = data;
+      // const bothIDs = {
+      //   petid: dogIDinit,
+      //   userId: userid,
+      // };
+
+      $.post('/api/user-pets', {
+        PetId: dogIDinit,
+        UserId: userid,
+      }).then(function(data) {
+        window.location.replace('/homepage');
+      }) .catch((err)=>{
+        console.log(err);
+      });
+      // window.location.replace('/homepage');
       // If there's an error, handle it by throwing up a bootstrap alert
     })
         .catch((err)=>{
           console.log(err);
         });
   }
+
+  // function linkDogToUser ()
 });

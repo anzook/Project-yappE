@@ -38,15 +38,15 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   User.associate = function(models) {
-    User.hasMany(models.Role)//, {
-     // through: 'User_Role', // pivot
-    //});
+    User.hasMany(models.Role);// , {
+    // through: 'User_Role', // pivot
+    // });
 
-    User.belongsToMany(models.Pet, {
-      through: 'User_Pet', // pivot
-    });
+    // User.belongsToMany(models.Pet, {
+    //   through: 'User_Pet', // pivot
+    // });
 
-    User.hasMany(models.Action);
+    User.hasMany(models.UserPet);
   };
 
   // Creating a custom method for our User model. This will check if

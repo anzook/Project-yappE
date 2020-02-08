@@ -38,11 +38,11 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Pet.associate = function(models) {
-    Pet.belongsToMany(models.User, {
-      through: 'User_Pet', // pivot
-      allowNull: false,
-      onDelete: 'CASCADE',
-    });
+    // Pet.belongsToMany(models.User, {
+    //   through: 'User_Pet', // pivot
+    //   allowNull: false,
+    //   onDelete: 'CASCADE',
+    // });
 
     Pet.belongsToMany(models.Role, {
       through: 'Role_Pet',

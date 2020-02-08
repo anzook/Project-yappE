@@ -18,6 +18,7 @@ $(document).ready(function() {
     $('.login').css('background', 'none');
   });
 
+
   // Getting references to our form and input
   const signUpForm = $('form.signup-form');
   const nameInput = $('input#name-input');
@@ -40,8 +41,8 @@ $(document).ready(function() {
     // If we have an email, password, and name run the signUpUser function
     signUpUser(userData.name, userData.email, userData.password);
     nameInput.val('');
-    loginemailInput.val('');
-    loginpasswordInput.val('');
+    signupemailInput.val('');
+    signuppasswordInput.val('');
   });
 
   // Does a post to the signup route. If successful
@@ -54,6 +55,8 @@ $(document).ready(function() {
       password: password,
     })
         .then(function(data) {
+          localStorage.setItem('userId', data);
+          // console.log(idArray);
           window.location.replace('/initial-adds');
           // If there's an error, handle it by throwing up a bootstrap alert
         })
