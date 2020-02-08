@@ -30,10 +30,10 @@ module.exports = function(app) {
 
   app.post('/api/user-pets', function(req, res) {
     db.UserPet.create({
-      PetId: req.pedId,
-      UserId: req.userId,
+      PetId: req.body.PetId,
+      UserId: req.body.UserId,
     }). then(function(dogID) {
-      res.json('good');
+      res.json('dogID');
     }).catch(function(err) {
       res.status(401).json(err);
     });
