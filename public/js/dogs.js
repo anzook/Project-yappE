@@ -10,7 +10,6 @@ $(document).ready(function() {
   initSubmitbtn.click(function(event) {
     event.preventDefault();
     if (initSubmitbtn.html() == 'Submit') {
-      console.log('I was touched');
       const dogData = {
         name: nameInput.val().trim(),
         age: ageInput.val().trim(),
@@ -25,7 +24,6 @@ $(document).ready(function() {
       nextPrev(1);
     }
   });
-
 
   function addDog(name, age, sex, breed) {
     $.post('/api/pets', {
