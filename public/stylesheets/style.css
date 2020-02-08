@@ -306,7 +306,8 @@ select{
     font-family: 'Signika Negative', sans-serif;
     font-weight: 700;
     font-size: 40px;
-    padding: 0 25px;
+    margin: 0 25px;
+    border-bottom: 2px solid gray;
 }
 
 .main-content h4{
@@ -319,7 +320,7 @@ select{
 
 .routine-div{
     padding: 25px;
-    padding-top: 0;
+    padding-top: 15px;
     height: 36vh;
     overflow-y: auto;
 }
