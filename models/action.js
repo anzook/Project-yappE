@@ -19,9 +19,9 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Action.associates = function(models) {
-    Action.hasOne(models.Pet);
-    Action.hasOne(models.User);
-    Action.hasOne(models.Action_Type);
+    // Action.hasOne(models.Pet);
+    // Action.hasOne(models.User);
+    // Action.hasOne(models.Action_Type);
   };
 
   return Action;

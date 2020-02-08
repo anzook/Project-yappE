@@ -44,6 +44,8 @@ module.exports = function(sequelize, DataTypes) {
     //   otherKey: 'userID',
     });
     //   onDelete: 'CASCADE',
+    Pet.hasMany(models.Action);
+
   };
 
 //   Pet.associate = function(models) {
