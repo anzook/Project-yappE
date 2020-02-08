@@ -28,48 +28,74 @@
 
         <form id="regForm" class="initial-adds-form">
             <!-- One "tab" for each step in the form: -->
+            <div class="tab">
+                <h2>Would you like to add:</h2>
+                <div class="dog-sex-container choice-div">
+                    <label>
+                        <input type="radio" name="choice" id="choice" value="new">
+                        <span>A New Dog</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="choice" id="choice" value="existing">
+                        <span>An Existing Dog</span>
+                    </label>
+                </div>
+            </div>
+            <!-- One "tab" for each step in the form: -->
             <div class="tab add-dog-tab">
-                <h2>Add Dog:</h2>
-                <div class="field">
-                    <div class="control has-icons-left">
-                        <input class="input" type="text" id="dog-name" placeholder="Name: Snowflake">
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-paw"></i>
-                        </span>
+                <div id="new-dog">
+                    <h2>Add Dog:</h2>
+                    <div class="field">
+                        <div class="control has-icons-left">
+                            <input class="input" type="text" id="dog-name" placeholder="Name: Snowflake">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-paw"></i>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div class="field">
-                    <div class="control has-icons-left">
-                        <input class="input" type="text" id="dog-age" placeholder="Age: 4">
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-paw"></i>
-                        </span>
+                    <div class="field">
+                        <div class="control has-icons-left">
+                            <input class="input" type="text" id="dog-age" placeholder="Age: 4">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-paw"></i>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div class="dog-sex-container">
-                    <label>
-                        <input type="radio" name="dog-sex" id="dog-sex" value="male">
-                        <span id="male-dog">Male</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="dog-sex" id="dog-sex" value="female">
-                        <span id="female-dog">Female</span>
-                    </label>
+                    <div class="dog-sex-container">
+                        <label>
+                            <input type="radio" name="dog-sex" id="dog-sex" value="male">
+                            <span id="male-dog">Male</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="dog-sex" id="dog-sex" value="female">
+                            <span id="female-dog">Female</span>
+                        </label>
+                    </div>
+
+                    <div class="select breed-div">
+                        <select id="dog-breed">
+                            <option>Breed...</option>
+                            <option>Labrador Retriever</option>
+                            <option>German Shepherd</option>
+                            <option>Shih Tzu</option>
+                            <option>Golden Retriever</option>
+                            <option>Bulldog</option>
+                            <option>Beagle</option>
+                            <option>American Pitbull Terrier</option>
+                            <option>Poodle</option>
+                        </select>
+                    </div>
+
+                    <div id="existing-dog">
+                        <div class="control has-icons-left">
+                            <input class="input" type="text" id="dog-id" placeholder="Enter Dog Tag">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-tags"></i>
+                            </span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="select breed-div">
-                    <select id="dog-breed">
-                        <option>Breed...</option>
-                        <option>Labrador Retriever</option>
-                        <option>German Shepherd</option>
-                        <option>Shih Tzu</option>
-                        <option>Golden Retriever</option>
-                        <option>Bulldog</option>
-                        <option>Beagle</option>
-                        <option>American Pitbull Terrier</option>
-                        <option>Poodle</option>
-                    </select>
-                </div>
             </div>
 
             <!-- <div class="tab">
@@ -85,36 +111,6 @@
                 <p><input placeholder="Phone..." oninput="this.className = ''"></p>
             </form>
         </div> -->
-
-            <!-- One "tab" for each step in the form: -->
-            <div class="tab add-caretaker-tab">
-                <h2>Add Caretaker:</h2>
-                <div class="field">
-                    <div class="control has-icons-left">
-                        <div class="select role-div">
-                            <select class="is-hovered has-icon-left" id="caretaker-role">
-                                <option id="not-option">Role...</option>
-                                <option>Additional Parent</option>
-                                <option>Sitter</option>
-                                <option>Walker</option>
-                                <option>Vet</option>
-                            </select>
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-user"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control has-icons-left">
-                        <input class="input" id="caretaker-email" type="email" placeholder="Email: email@email.com">
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-envelope"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
 
             <div style="overflow:auto;">
                 <div style="float:right;">

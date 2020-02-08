@@ -6,10 +6,13 @@ $(document).ready(function() {
   const ageInput = $('#dog-age');
   const breedInput = $('#dog-breed');
   const initSubmitbtn = $('#nextBtn');
+  const existingDogDiv = $('#existing-dog');
+  const newDogDiv = $('#new-dog');
+  const choice = $('#choice');
 
   initSubmitbtn.click(function(event) {
     event.preventDefault();
-    if (initSubmitbtn.html() == 'Submit') {
+    if (initSubmitbtn.html() === 'Submit') {
       const dogData = {
         name: nameInput.val().trim(),
         age: ageInput.val().trim(),
@@ -20,7 +23,14 @@ $(document).ready(function() {
         return;
       }
       addDog(dogData.name, dogData.age, dogData.sex, dogData.breed);
-    } else {
+    } else if (initSubmitbtn.html() === 'Next') {
+      if ($('input[name="choice"]:checked').val() === 'new') {
+        existingDogDiv.hide();
+        newDogDiv.show();
+      } else if ($('input[name="choice"]:checked').val() === 'existing') {
+        newDogDiv.hide();
+        existingDogDiv.show();
+      }
       nextPrev(1);
     }
   });
