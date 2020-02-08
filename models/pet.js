@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   const Pet = sequelize.define('Pet', {
-    id: {
-      type: DataTypes.UUID,
+    pet_id: {
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
+      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -34,14 +34,17 @@ module.exports = function(sequelize, DataTypes) {
     breed: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    }}, {
+    tableName: 'Pet',
+
   });
 
   Pet.associate = function(models) {
     Pet.belongsToMany(models.User, {
-      through: 'User_Pet', // pivot
-      allowNull: false,
-      onDelete: 'CASCADE',
+      through: models.UserPet, // pivot
+      as: 'UsersInPets',
+      // allowNull: false,
+      // onDelete: 'CASCADE',
     });
 
     Pet.belongsToMany(models.Role, {
@@ -49,6 +52,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       onDelete: 'CASCADE',
     });
+    Pet.hasMany(models.Action);
 
     // Pet.belongsToMany(models.Contact, {
     //     through: models.User

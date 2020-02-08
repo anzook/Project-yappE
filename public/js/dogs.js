@@ -52,17 +52,22 @@ $(document).ready(function() {
   });
 
   function addDog(name, age, sex, breed) {
-    $.post('/api/pets', {
-      name: name,
-      age: age,
-      sex: sex,
-      breed: breed,
-    }) .then(function(data) {
-      window.location.replace('/homepage');
+    $.get('/api/user_data', {
+
+    }).then(function(data) {
+      console.log(data);
+      $.post('/api/pets', {
+        name: name,
+        age: age,
+        sex: sex,
+        breed: breed,
+      }) .then(function(data) {
+        window.location.replace('/homepage');
       // If there's an error, handle it by throwing up a bootstrap alert
-    })
-        .catch((err)=>{
-          console.log(err);
-        });
+      })
+          .catch((err)=>{
+            console.log(err);
+          });
+    });
   }
 });

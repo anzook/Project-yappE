@@ -11,6 +11,15 @@ $(document).ready(function() {
   const breedInput = $('#dog-breed');
   const submitDogAdd = $('#submit-dog');
 
+  $.get('/api/user_data').then(function(data) {
+    $('.user-name').text(data.name);
+  });
+  $.get('/api/pets/id', {
+    pet_id: 1}).then(function(dogdata) {
+    $('#dog-name').text(dogdata.name);
+    dogApi(dogdata.breed, `dogPic${dogdata.id}`);
+  });
+
   addDogBtn.click(function() {
     modal.show();
   });
@@ -55,5 +64,35 @@ $(document).ready(function() {
         .catch((err)=>{
           console.log(err);
         });
+  }
+
+
+  function dogApi(breed, imgId) {
+  // queryURL is the url we'll use to query the API
+    const dogBreed = breed.val().trim();
+    const queryURL = 'https://dog.ceo/api/breed/'+ dogBreed +'/images/random';
+
+    $.ajax({
+      url: queryURL,
+      method: 'GET',
+    }).then( (data) => updatePage(data, imgId) );
+  };
+
+  function updatePage(dogData, imgId) {
+  // log response data for testing
+    console.log(dogData);
+
+    if (dogData.status == 'success') {
+      $('#image-div').empty();
+      const strStart = dogData.message.search('breed') + 6;
+      const strEnd = dogData.message.indexOf('/', strStart) -1;
+      const stringBreed = dogData.message.splice(strStart, strEnd);
+      const dogImg = $('<img />'); // Equivalent: $(document.createElement('img'))
+      dogImg.attr('src', dogData.message);
+      dogImg.attr('id', imgId);
+      dogImg.attr('alt', stringBreed);
+
+      dogImg.appendTo('#imagediv');
+    }
   }
 });

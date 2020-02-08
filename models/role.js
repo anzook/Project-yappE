@@ -1,9 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   const Role = sequelize.define('Role', {
-    id: {
-      type: DataTypes.UUID,
+    role_id: {
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
+      autoIncrement: true,
       allowNull: false,
     },
     name: {
@@ -13,12 +13,12 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Role.associate = function(models) {
-    Role.belongsToMany(models.User,{through: 'User_Role'}),
-    Role.hasOne(models.Pet)
-    } //, //{
-      //through: 'User_Role', // pivot
-    //});
-    //)}
+    Role.belongsToMany(models.User, {through: 'User_Role'}),
+    Role.hasOne(models.Pet);
+  }; // , //{
+  // through: 'User_Role', // pivot
+  // });
+  // )}
 
 
   return Role;

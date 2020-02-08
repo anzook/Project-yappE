@@ -3,11 +3,11 @@ const bcrypt = require('bcryptjs');
 
 module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define('User', {
-    id: {
-      type: DataTypes.UUID,
+    user_id: {
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
+      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -34,16 +34,19 @@ module.exports = function(sequelize, DataTypes) {
       //     isLowercase: true, // checks for lowercase
       //     isUppercase: true // checks for uppercase
       // }
-    },
+    }},
+  {
+    tableName: 'User',
   });
 
   User.associate = function(models) {
-    User.hasMany(models.Role)//, {
-     // through: 'User_Role', // pivot
-    //});
+    User.hasMany(models.Role);// , {
+    // through: 'User_Role', // pivot
+    // });
 
     User.belongsToMany(models.Pet, {
-      through: 'User_Pet', // pivot
+      as: 'PetsInUsers',
+      through: models.UserPet, // pivot
     });
 
     User.hasMany(models.Action);
