@@ -19,13 +19,21 @@
       </a>
     </div>
 
+
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary add-dog-btn">
+          <a class="button is-primary add-dog-btn" id="add-dog-btn">
             <i class="fas fa-paw fa-2x"></i>
             <i class="fas fa-plus fa-lg"></i>
           </a>
+          <div class="modal" id="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <!-- Any other Bulma elements you want -->
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
         </div>
       </div>
     </div>
@@ -61,14 +69,12 @@
             <div><button class="button is-primary">Thor Was Walked</button></div>
           </div>
         </div>
-
-        
-
       </div>
-
     </div>
-
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/dogs.js"></script>
+  <script type="text/javascript" src="js/profile.js"></script>
 </body>
 
 </html>
