@@ -8,7 +8,7 @@ module.exports = (app) => {
   app.get('/', (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect('/test');
+      res.redirect('/homepage');
     }
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
@@ -18,7 +18,7 @@ module.exports = (app) => {
   // If a user who is not logged in tries to access this route
   // they will be redirected to the signup page
   app.get('/homepage', isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/templates/test.html'));
+    res.sendFile(path.join(__dirname, '../public/profile.html'));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
@@ -31,7 +31,7 @@ module.exports = (app) => {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they
   // will be redirected to the signup page
-  app.get('/test', isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, '../templates/test.html'));
-  });
+  // app.get('/test', isAuthenticated, function(req, res) {
+  //   res.sendFile(path.join(__dirname, '../templates/test.html'));
+  // });
 };
