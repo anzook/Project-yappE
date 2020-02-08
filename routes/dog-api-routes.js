@@ -19,22 +19,24 @@ module.exports = function(app) {
       age: req.body.age,
       sex: req.body.sex,
       breed: req.body.breed,
-      abc: {id: 'ee6d7cc3-d6ae-49b7-9792-4c48ca89e255'},
-      // user:
-      //   {id: '6fd51a45-7ad5-4a42-bc2e-3f0762f7fbc6'},
-      // role:
-      //   {name: 'owner'},
-    }, {
-      include: db.User,
     })
-
-
         .then(function(dbDog) {
-          res.json(dbDog);
+          res.json(dbDog.dataValues.id);
         })
         .catch(function(err) {
           res.status(401).json(err);
         });
+  });
+
+  app.post('/api/user-pets', function(req, res) {
+    db.UserPet.create({
+      PetId: req.pedId,
+      UserId: req.userId,
+    }). then(function(dogID) {
+      res.json('good');
+    }).catch(function(err) {
+      res.status(401).json(err);
+    });
   });
 
   app.delete('/api/pets/:id', function(req, res) {

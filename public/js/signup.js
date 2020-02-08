@@ -1,7 +1,4 @@
 /* eslint-disable require-jsdoc */
-//  Temp Array
-const idArray = [];
-
 $(document).ready(function() {
   // Setting up automation for signup and login forms
   $('.login-form').hide();
