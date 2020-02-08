@@ -10,7 +10,7 @@ const config = {
   },
   'test': {
     'username': 'root',
-    'password': null,
+    'password': 'root',
     'database': 'database_test',
     'host': '127.0.0.1',
     'dialect': 'mysql',
@@ -18,7 +18,7 @@ const config = {
   },
   'production': {
     'username': 'root',
-    'password': null,
+    'password': 'root',
     'database': 'database_production',
     'host': '127.0.0.1',
     'dialect': 'mysql',

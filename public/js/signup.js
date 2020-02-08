@@ -21,8 +21,8 @@ $(document).ready(function() {
   // Getting references to our form and input
   const signUpForm = $('form.signup-form');
   const nameInput = $('input#name-input');
-  const emailInput = $('input#email-input');
-  const passwordInput = $('input#password-input');
+  const signupemailInput = $('input#su-email-input');
+  const signuppasswordInput = $('input#su-password-input');
 
   // When the signup button is clicked, we validate the email and
   // password are not blank
@@ -30,8 +30,8 @@ $(document).ready(function() {
     event.preventDefault();
     const userData = {
       name: nameInput.val().trim(),
-      email: emailInput.val().trim(),
-      password: passwordInput.val().trim(),
+      email: signupemailInput.val().trim(),
+      password: signuppasswordInput.val().trim(),
     };
 
     if (!userData.name || !userData.email || !userData.password) {
@@ -40,8 +40,8 @@ $(document).ready(function() {
     // If we have an email, password, and name run the signUpUser function
     signUpUser(userData.name, userData.email, userData.password);
     nameInput.val('');
-    emailInput.val('');
-    passwordInput.val('');
+    loginemailInput.val('');
+    loginpasswordInput.val('');
   });
 
   // Does a post to the signup route. If successful

@@ -1,3 +1,4 @@
+
 USE dog_db;
 
 INSERT INTO PETS (name, age, sex, breed)
