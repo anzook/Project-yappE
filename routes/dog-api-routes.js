@@ -26,9 +26,6 @@ module.exports = function(app) {
       //   {name: 'owner'},
     }, {
       include: db.User,
-
-
-      
     })
 
 

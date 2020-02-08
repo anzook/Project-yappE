@@ -34,7 +34,6 @@ $(document).ready(function() {
       breed: breedInput.val().trim(),
     };
 
-    console.log(dogData);
     if (!dogData.name || !dogData.age || !dogData.sex || !dogData.breed) {
       return;
     }

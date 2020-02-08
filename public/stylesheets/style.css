@@ -156,15 +156,17 @@ body{
     margin-bottom: 10px;
 }
 
+/* .choice-div, */
 .dog-sex-container{
-text-align: center;
+    text-align: center;
 }
-
+/* .choice-div label, */
 .dog-sex-container label{
     position: relative;
     cursor: pointer;
 }
 
+/* .choice-div label input, */
 .dog-sex-container label input{
     display: none;
 }
@@ -182,6 +184,18 @@ text-align: center;
     /* z-index: 1; */
 }
 
+.choice-div label span{
+    position: relative;
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 20px;
+    width: 45%;
+    border: 2px solid rgb(100, 104, 110);
+    border-radius: 4px;
+    color: rgb(100, 104, 110);
+}
+
+/* .choice-div label input:checked ~ span, */
 .dog-sex-container label input:checked ~ span{
     color: white;
     border: 2px solid #48c774;
