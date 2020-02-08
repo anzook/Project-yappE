@@ -11,6 +11,11 @@ $(document).ready(function() {
   const newDogDiv = $('#new-dog');
   const dogID = $('#dog-id');
 
+  // grab user id from localstorage
+  const userid = localStorage.getItem('userId');
+
+  console.log(userid);
+
   initSubmitbtn.click(function(event) {
     event.preventDefault();
     if (initSubmitbtn.html() === 'Submit') {

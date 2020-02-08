@@ -1,5 +1,6 @@
 // Requiring our models and passport as we've configured it
 const db = require('../models');
+const idHolder = require('../db/id-holder');
 const passport = require('../config/passport');
 
 module.exports = function(app) {
@@ -21,9 +22,8 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password,
     })
-        .then(function() {
-          console.log('good');
-          res.redirect(307, '/api/login');
+        .then(function(userdb) {
+          res.json(userdb.dataValues.id);
         })
         .catch(function(err) {
           console.log(err);
