@@ -30,7 +30,47 @@
           <div class="modal" id="modal">
             <div class="modal-background"></div>
             <div class="modal-content">
-              <!-- Any other Bulma elements you want -->
+              <h2>Add Dog:</h2>
+                <div class="field">
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" id="dog-name" placeholder="Name: Snowflake">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-paw"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" id="dog-age" placeholder="Age: 4">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-paw"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="dog-sex-container">
+                    <label>
+                        <input type="radio" name="dog-sex" id="dog-sex" value="male">
+                        <span id="male-dog">Male</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="dog-sex" id="dog-sex" value="female">
+                        <span id="female-dog">Female</span>
+                    </label>
+                </div>
+
+                <div class="select breed-div">
+                    <select id="dog-breed">
+                        <option>Breed...</option>
+                        <option>Labrador Retriever</option>
+                        <option>German Shepherd</option>
+                        <option>Shih Tzu</option>
+                        <option>Golden Retriever</option>
+                        <option>Bulldog</option>
+                        <option>Beagle</option>
+                        <option>American Pitbull Terrier</option>
+                        <option>Poodle</option>
+                    </select>
+                </div>
             </div>
             <button class="modal-close is-large" aria-label="close"></button>
           </div>
