@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Signika+Negative:400,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
 /* ===style for all pages=== */
 * {
@@ -10,6 +12,9 @@
  
 body{
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    background-color: #aeaeae;
+    overflow: hidden;
 }
 
 .input{
@@ -22,7 +27,6 @@ body{
 /* ===========index=========== */
 .landing-body {
     background-image: url("../images/dogbg3.jpg");
-    height: 100vh;
     background-size: cover;
     overflow: hidden;
 }
@@ -99,7 +103,6 @@ body{
 
 .initial-add-body{
     background-image: url('../images/dogbg4.jpg');
-    height: 100vh;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -216,6 +219,151 @@ select{
 
 /* ============End============ */
 
+/* ==========Profile========== */
+
+.profile-body{
+    background-color: #e0e0e0;
+    max-height: 100vh;
+    background-image: url("../images/pawsbg.jpg");
+    background-size: cover;
+}
+
+.profile-body .button{
+    background-color: #009eae;
+}
+
+.profile-nav {
+    background-color: rgb(76,207,224, 0.96);
+    border-bottom: 2px solid #aeaeae;
+    height: 105px;
+
+}
+
+.nav-size{
+    max-width: 500px;
+}
+
+#profile-yappe{
+    text-shadow: 1px 7px 4px #262c2c;
+    padding: 0;
+    position: absolute;
+    top: -10px;
+}
+
+.add-dog-btn{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+    box-shadow: 5px 6px 25px #555555;
+}
+
+.add-dog-btn:hover{
+    background-color: #aeaeae;
+}
+.fa-paw{
+    margin-right: 4px;
+}
+.buttons .button:not(:last-child):not(.is-fullwidth) {
+    margin-right: 25px;
+}
+
+.profile-card{
+    margin: 30px auto 0;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 400px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 5px 10px 18px #222222;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.profile-card .button{
+    background-color: #009faf;
+    width: 100%;
+    font-weight: 700;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.button.is-primary.is-hovered, .button.is-primary:hover{
+    background-color: #4dd0e1;
+}
+
+.img-div{
+    padding: 25px;
+    padding-bottom: 0px;
+}
+
+.img-div img{
+    height: 240px;
+    max-width: 100%;
+    margin: auto;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+.main-content h2{
+    font-family: 'Signika Negative', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    padding: 0 25px;
+}
+
+.main-content h4{
+    text-align: right;
+}
+
+/* .textarea{
+    display: none;
+} */
+
+.routine-div{
+    padding: 25px;
+    padding-top: 0;
+    height: 36vh;
+    overflow-y: auto;
+}
+
+#potty-div{
+    padding-top: 0;
+}
+#feed-div, 
+#walked-div{
+    margin-top: 10px;
+}
+
+.main-content button{
+    margin: 10px 0 20px;
+    float: right;
+    clear: both;
+}
+/* width */
+.routine-div::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.routine-div::-webkit-scrollbar-track {
+    background : #f1f1f1;
+    border-radius: 5px;
+}
+
+/* Handle */
+.routine-div::-webkit-scrollbar-thumb {
+    background: #4dd0e1; 
+    border-radius: 5px;
+    height: 20px;
+}
+
+/* Handle on hover */
+.routine-div::-webkit-scrollbar-thumb:hover {
+    background: #009faf; 
+}
+
+
+
+/* ============End============ */
+
 
 /* ========Viewpoints========= */
 @media only screen and (max-width: 1024px) {
@@ -231,6 +379,7 @@ select{
         margin-top: 135px;
         /* margin-right: auto; */
     }
+    
 }
 
 @media only screen and (max-width: 425px) {
