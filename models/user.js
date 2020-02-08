@@ -4,9 +4,9 @@ const bcrypt = require('bcryptjs');
 module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define('User', {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
+      autoIncrement: true,
       allowNull: false,
     },
     name: {
@@ -37,17 +37,27 @@ module.exports = function(sequelize, DataTypes) {
     },
   });
 
+  // User.associate = function(models) {
+  //   User.hasMany(models.Role)//, {
+  // through: 'User_Role', // pivot
+  // });
+
+  // User.belongsToMany(models.Pet, {
+  //   through: 'User_Pet', // pivot
+  // });
+
   User.associate = function(models) {
-    User.hasMany(models.Role)//, {
-     // through: 'User_Role', // pivot
-    //});
-
     User.belongsToMany(models.Pet, {
-      through: 'User_Pet', // pivot
+      through: 'UserPet',
+      foreignKey: 'userId',
+      otherKey: 'petID',
     });
-
+    //   onDelete: 'CASCADE',
     User.hasMany(models.Action);
   };
+
+
+
 
   // Creating a custom method for our User model. This will check if
   // an unhashed password entered by

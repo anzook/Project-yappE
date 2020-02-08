@@ -8,37 +8,59 @@ module.exports = function(app) {
       where: {
         id: req.params.id,
       },
+    },
+    {
+      include: [{
+        model: User,
+      }],
     }).then(function(dbDog) {
       res.json(dbDog);
     }).catch();
   });
 
-  app.post('/api/pets', function(req, res) {
-    db.Pet.create({
-      name: req.body.name,
-      age: req.body.age,
-      sex: req.body.sex,
-      breed: req.body.breed,
-      abc: {id: 'ee6d7cc3-d6ae-49b7-9792-4c48ca89e255'},
-      // user:
-      //   {id: '6fd51a45-7ad5-4a42-bc2e-3f0762f7fbc6'},
-      // role:
-      //   {name: 'owner'},
-    }, {
-      include: db.User,
-
-
-      
-    })
-
-
-        .then(function(dbDog) {
-          res.json(dbDog);
-        })
-        .catch(function(err) {
-          res.status(401).json(err);
-        });
+  app.post('/api/pets', async (req, res, next) => {
+    try {
+      const PetAdd = await db.Pet.findOrCreate({
+        where: {
+          name: req.body.name,
+          age: req.body.age,
+          sex: req.body.sex,
+          breed: req.body.breed,
+        },
+      });
+      const currentUser = await db.User.findByPk(req.body.userId);
+      await currentUser.addPet(PetAdd);
+      res.json(PetAdd);
+    } catch (err) {
+      // res.status(401).json(err);
+      next(err);
+    }
   });
+
+
+  // app.post('/api/pets', function(req, res) {
+  //   db.Pet.findOrCreate({
+  //     name: req.body.name,
+  //     age: req.body.age,
+  //     sex: req.body.sex,
+  //     breed: req.body.breed,
+  //     // UserId: req.body.userId,
+  //   }).then(function(res){
+  //     try {
+  //       const currentDog = res.Pet.id;
+  //       const currentUser = await User.findById(req.body.userId);
+  //       await currentUser.addPet(pet[currentDog]);
+  //       res.json(pet[currentDog]);
+  //     } catch (error) {
+  //       next(error);
+  //     }
+  //   }).then(function(dbDog) {
+  //     res.json(dbDog);
+  //   })
+  //       .catch(function(err) {
+  //         res.status(401).json(err);
+  //       });
+  // });
 
   app.delete('/api/pets/:id', function(req, res) {
     db.Pet.destroy({

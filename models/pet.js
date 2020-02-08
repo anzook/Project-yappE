@@ -1,9 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   const Pet = sequelize.define('Pet', {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
+      autoIncrement: true,
       allowNull: false,
     },
     name: {
@@ -39,20 +39,24 @@ module.exports = function(sequelize, DataTypes) {
 
   Pet.associate = function(models) {
     Pet.belongsToMany(models.User, {
-      through: 'User_Pet', // pivot
-      allowNull: false,
-      onDelete: 'CASCADE',
+      through: 'UserPet',
+      foreignKey: 'petId',
+      otherKey: 'userID',
     });
-
-    Pet.belongsToMany(models.Role, {
-      through: 'Role_Pet',
-      allowNull: false,
-      onDelete: 'CASCADE',
-    });
-
-    // Pet.belongsToMany(models.Contact, {
-    //     through: models.User
-    // });
+    //   onDelete: 'CASCADE',
   };
+
+//   Pet.associate = function(models) {
+//     Pet.hasMany(models.Invite, {
+//     //   through: 'PetInvite', // pivot
+//      // foreignKey: 'petId',
+//     //   otherKey: 'inviteID',
+//       //   //   onDelete: 'CASCADE',
+//     });
+//   };
+  // Pet.belongsToMany(models.Contact, {
+  //     through: models.User
+  // });
+
   return Pet;
 };
