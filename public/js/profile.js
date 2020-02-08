@@ -11,6 +11,10 @@ $(document).ready(function() {
   const breedInput = $('#dog-breed');
   const submitDogAdd = $('#submit-dog');
 
+  // grab user id from localstorage
+  const userid = localStorage.getItem('userId');
+  getDog(userid);
+
   addDogBtn.click(function() {
     modal.show();
   });
@@ -55,5 +59,18 @@ $(document).ready(function() {
         .catch((err)=>{
           console.log(err);
         });
+  }
+
+  function getDog(user) {
+    $.get("/api/user/" + user, function(data) {
+      console.log("Dog", + data);
+      dog = data;
+      // if (!posts || !posts.length) {
+      //   displayEmpty(author);
+      // }
+      // else {
+      //   initializeRows();
+      // }
+    });
   }
 });

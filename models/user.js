@@ -46,7 +46,7 @@ module.exports = function(sequelize, DataTypes) {
     //   through: 'User_Pet', // pivot
     // });
 
-    User.hasMany(models.Action);
+    User.hasMany(models.UserPet);
   };
 
   // Creating a custom method for our User model. This will check if
